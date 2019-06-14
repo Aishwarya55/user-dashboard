@@ -1,0 +1,28 @@
+{
+  "name": "user-dashboard",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npm run watch:server && npm run restart",
+    "restart": "rimraf build && npm start",
+    "build": "webpack --mode production",
+    "start": "npm-run-all --parallel watch:server watch:build",
+    "watch:build": "webpack --watch --mode development",
+    "watch:server": "nodemon \"./build/index.js\" --watch \"./build\""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "lodash": "^4.17.11",
+    "mongoose": "^5.5.15"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5",
+    "webpack-cli": "^3.3.4"
+  }
+}
